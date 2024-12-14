@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدفع والسحب</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .withdraw-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .withdraw-form input,
+        .withdraw-form select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .withdraw-form button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .withdraw-form button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>طلب السحب</h1>
+
+    <div class="withdraw-form">
+        <label for="withdraw-method">اختر طريقة السحب:</label>
+        <select id="withdraw-method">
+            <option value="paypal">PayPal</option>
+            <option value="trc20">TRC20</option>
+        </select>
+
+        <label for="amount">المبلغ الذي ترغب في سحبه:</label>
+        <input type="number" id="amount" placeholder="أدخل المبلغ" />
+
+        <button onclick="submitRequest()">إرسال طلب السحب</button>
+    </div>
+
+    <script>
+        function submitRequest() {
+            const method = document.getElementById('withdraw-method').value;
+            const amount = document.getElementById('amount').value;
+            const email = 'dreaminvestment311@gmail.com'; // بريدك الإلكتروني
+            const trc20 = 'TQkHHVUfQC6oZ6rZYxNuUL32EvCAyM8Rd2'; // عنوان TRC20
+
+            if (!amount) {
+                alert('يرجى إدخال المبلغ!');
+                return;
+            }
+
+            const requestDetails = `طريقة السحب: ${method}\nالمبلغ: ${amount}\n`;
+
+            if (method === 'paypal') {
+                window.location.href = `mailto:${email}?subject=طلب سحب&body=${requestDetails}`;
+            } else if (method === 'trc20') {
+                alert(`تم إرسال طلب السحب إلى عنوان TRC20: ${trc20}\nالمبلغ: ${amount}`);
+            }
+        }
+    </script>
+
+</body>
+</html>
