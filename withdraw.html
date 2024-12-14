@@ -1,37 +1,28 @@
-<!doctype html>
-<html lang="ar"> 
-  <head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>الدفع والسحب</title> 
-  </head>
-  <body>
-    <h1>الدفع والسحب</h1>
-    
-    <p>طرق الدفع المتاحة:</p>
-    <ul>
-      <li>PayPal: <a href="https://www.paypal.com/paypalme/YourPayPalLink" target="_blank">رابط PayPal</a></li>
-      <li>TRC20: عنوان محفظتك: <strong>TJvFdd2a3sds23Tj34FrrdY5XexvW</strong></li>
-    </ul>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدفع والسحب</title>
+</head>
+<body>
+    <h1>صفحة الدفع والسحب</h1>
+    <h2>معلومات الدفع</h2>
+    <p>رابط بايبال: <a href="https://www.paypal.com/ncp/payment/M3KD8C93SZW2S">رابط بايبال الخاص بي</a></p>
+    <p>عنوان شبكة TRC20: TQkHHVUfQC6oZ6rZYxNuUL32EvCAyM8Rd2</p>
 
-    <form action="submit_withdrawal.php" method="POST">
-      <label for="amount">المبلغ للسحب:</label>
-      <input type="number" id="amount" name="amount" required><br><br>
+    <h2>طلب السحب</h2>
+    <form action="mailto:dreaminvestment311@gmail.com" method="post" enctype="text/plain">
+        <label for="withdraw-method">اختار طريقة السحب:</label>
+        <select name="withdraw-method" id="withdraw-method">
+            <option value="paypal">بايبال</option>
+            <option value="trc20">TRC20</option>
+        </select><br><br>
 
-      <label for="method">طريقة الدفع:</label>
-      <select id="method" name="method" required>
-        <option value="paypal">PayPal</option>
-        <option value="trc20">TRC20</option>
-      </select><br><br>
+        <label for="withdraw-amount">مبلغ السحب:</label>
+        <input type="number" id="withdraw-amount" name="withdraw-amount" required><br><br>
 
-      <label for="email">البريد الإلكتروني (لإرسال طلب السحب):</label>
-      <input type="email" id="email" name="email" required><br><br>
-
-      <input type="submit" value="إرسال طلب السحب">
+        <input type="submit" value="إرسال طلب السحب">
     </form>
-
-    <a href="wheel.html">الذهاب إلى عجلة الحظ</a> | 
-    <a href="account.html">حساب العميل</a> | 
-    <a href="login.html">تسجيل الدخول</a>
-  </body>
+</body>
 </html>
